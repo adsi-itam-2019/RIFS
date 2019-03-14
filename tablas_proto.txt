@@ -4,7 +4,7 @@ create table arrendatario(cArrendatario int primary key,
 	nombre varchar(100) not null);
 
 create table propietario(cPropietario int primary key,
-	telefono varchar (100) not null,
+	telefono varchar (100) unique not null,
 	passwd varchar(100) not null,
 	nombre varchar(100) not null);
 
@@ -30,3 +30,6 @@ create table cita(cPropiedad int references propiedad,
 create table Servicio(nombre varchar(100),
 	cPropiedad int references propiedad,
 	primary key (cPropiedad, nombre));
+
+
+
